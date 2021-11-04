@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <RollingFile name="fileLogger" fileName="/var/log/projectX/${date:yyyy}/${date:MMM}-${date:dd}/logs.log" filePattern="$/var/log/projectX/${date:yyyy}/${date:MMM}-${date:dd}/logs-%i.log">
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] - %msg %n"/>
+            <Policies>
+                <CronTriggeringPolicy schedule="0 0 0 * * ?" />
+                <SizeBasedTriggeringPolicy size="250 MB" />
+            </Policies>
+        </RollingFile>
+
+        <Console name="Console" target="SYSTEM">
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg %n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="fileLogger"/>
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
