@@ -1,4 +1,4 @@
 # DeviceInstance-Trancom
 The project is a springboot application that allows a client (same client) to operate in three countries using same device instance.
 It also uses mysql for data management since its fast ,reliable,robust and its open source hence no need for licenses,It has large number of features that it comes with,incase security needs to be set up its easy to set up.Also mysql is used here because its a small application hence data processing is not enormous.It is not resource intensive.
-It is decided to use relationships in since the different entities are related to each other .For example the banks and bank branches are related,The client is related device through bank branches using.To manage these relationships ,JPARepository that quickens development process has been used.
+It is decided to use relationships in since the different entities are related to each other .For instance ,the client can operate the device in three countries ,the banks and bank-branches are related,The client is related to device through bank branches using.To manage these relationships ,JPARepository that quickens development process has been used.
